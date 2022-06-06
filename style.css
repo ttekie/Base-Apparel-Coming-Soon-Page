@@ -13,43 +13,45 @@
 body {
    background: url(./images/bg-pattern-desktop.svg), 
    linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+   /* background-repeat: no-repeat;
+   background-size: cover; */
 }
-.apparel-main-section {
+.apparel__main__section {
    display: grid;
    grid-template-columns: 1fr;
    padding-bottom: 5rem;
 }
 @media (min-width: 40rem) {
-   .apparel-main-section {
-      grid-template-columns: 55% 1fr;
-      grid-template-rows: auto auto 20rem;
+   .apparel__main__section {
+      grid-template-columns: 55% 45%;
+      grid-template-rows: auto auto 1fr;
       padding-bottom: 0;
-      justify-items: center;
    } 
 }
 @media(min-width: 40rem) {
-   .apparel-header,
-   .apparel-intro,
-   .apparel-form {
+   .apparel__header,
+   .apparel__intro,
+   .apparel__form {
       grid-column: 1 / 2;
    }
 }
 @media(min-width: 40rem) {
-   .apparel-hero-img {
+   .apparel__hero__img {
       grid-column: 2 / 3;
       grid-row: 1 / 4;
    }
 }
-.apparel-header {
+.apparel__header {
    padding: 2rem;
 }
 @media(min-width: 40rem) {
-   .apparel-header {
-      margin-top: 2rem;
+   .apparel__header {
+      width: 60%;
+      margin: 3rem auto;
       padding: 0;
    }
 }
-.apparel-header .apparel-logo {   
+.apparel__header .apparel__logo {   
    width: 7rem;
 }
 @media(min-width: 40rem) {
@@ -57,29 +59,31 @@ body {
       width: 8rem;
    }
 }
-.apparel-hero-img {
+.apparel__hero__img {
    display: grid;
    justify-items: stretch;
 }
 @media(min-width: 40rem) {
-   .apparel-hero-img {
+   .apparel__hero__img {
       align-items: stretch;
+      height: 100vh;
    }
 }
-.apparel-intro {
+.apparel__intro {
    display: grid;
    padding: 3rem 2rem 2rem;
    justify-items: center;
    color: var(--desaturated-red);
 }
 @media(min-width: 40rem) {
-   .apparel-intro {
+   .apparel__intro {
       display: block;
       padding: 0;
-      padding: 0;
+      width: 60%;
+      margin: 4rem auto 2rem;
    }
 }
-.apparel-intro h1 {
+.apparel__intro h1 {
    font-size: 2rem;
    text-transform: uppercase;
    width: min-content; 
@@ -89,16 +93,17 @@ body {
    text-align: center;
 }
 @media(min-width: 40rem) {
-   .apparel-intro h1 {
+   .apparel__intro h1 {
       text-align: left;
       font-size: 3.5rem;
+      letter-spacing: 0.8rem;
    }
 }
-.apparel-intro strong {
+.apparel__intro strong {
    font-weight: 600;
    color: #413a3a;
 }
-.apparel-intro p {
+.apparel__intro p {
    padding-top: 1rem;
    max-width: 19rem;
    text-align-last: center;
@@ -106,21 +111,24 @@ body {
    font-size: 0.85rem;
 }
 @media(min-width: 40rem) {
-   .apparel-intro p {
-
+   .apparel__intro p {
+      text-align-last: left;
    }
 }
-.apparel-form div {
+.apparel__form div {
    display: flex;
    padding-left: 2rem;
 }
 @media(min-width: 40rem) {
-   .apparel-form div {
+   .apparel__form {
+      width: 60%;
+      margin: 0 auto;
+   }
+   .apparel__form div {
       padding-left: 0;
-      justify-content: space-between;
    }
 }
-.apparel-form .apparel-input {
+.apparel__form .apparel__input {
    padding: 0.65rem 2rem;
    width: 100%;
    border-radius: 1.5rem;
@@ -129,15 +137,15 @@ body {
    background-color: transparent;
 }
 @media(min-width) {
-   .apparel-form .apparel-input {
+   .apparel__form .apparel__input {
       width: 100%;
    }
 }
-.apparel-form .apparel-input::placeholder {
+.apparel__form .apparel__input::placeholder {
    color: var(--desaturated-red);
    font-size: 0.85rem;
 }
-.apparel-form button {
+.apparel__form button {
    position: relative;
    right: 3rem;
    padding: 0.65rem 2rem;
@@ -148,6 +156,21 @@ body {
    transition-duration: 0.5s;
    transition-timing-function: ease-in;
 }
-.apparel-form button:hover {
+.apparel__form button:hover {
    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 70%, 68%));
+}
+
+.apparel__email__error::after, .apparel__email__success::after {
+   display: block;
+   position: relative;
+   left: 1.5rem;
+   top: 0.8rem;
+}
+.apparel__email__error::after {
+   color: hsl(0, 93%, 68%);
+   content: "Please enter a valid email address";
+}
+.apparel__email__success::after {
+   color: hsl(145, 41%, 51%);
+   content: "Valid email address sent";
 }
