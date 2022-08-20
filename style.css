@@ -13,8 +13,7 @@
 body {
    background: url(./images/bg-pattern-desktop.svg), 
    linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-   /* background-repeat: no-repeat;
-   background-size: cover; */
+   overflow: hidden;
 }
 .apparel__main__section {
    display: grid;
@@ -27,20 +26,20 @@ body {
       grid-template-rows: auto auto 1fr;
       padding-bottom: 0;
    } 
-}
+} 
 @media(min-width: 40rem) {
    .apparel__header,
    .apparel__intro,
    .apparel__form {
       grid-column: 1 / 2;
    }
-}
+} 
 @media(min-width: 40rem) {
    .apparel__hero__img {
       grid-column: 2 / 3;
       grid-row: 1 / 4;
    }
-}
+} 
 .apparel__header {
    padding: 2rem;
 }
@@ -51,11 +50,11 @@ body {
       padding: 0;
    }
 }
-.apparel__header .apparel__logo {   
+.apparel__logo {   
    width: 7rem;
 }
 @media(min-width: 40rem) {
-   .apparel-header .apparel-logo {
+   .apparel-logo {
       width: 8rem;
    }
 }
@@ -136,11 +135,11 @@ body {
    font-size: 1rem;
    background-color: transparent;
 }
-@media(min-width) {
+/* @media(min-width) {
    .apparel__form .apparel__input {
       width: 100%;
    }
-}
+} */
 .apparel__form .apparel__input::placeholder {
    color: var(--desaturated-red);
    font-size: 0.85rem;
